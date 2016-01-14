@@ -1,0 +1,12 @@
+<h2><%= @client.name %></h2>
+<%= image_tag @client.photo %>
+
+<h2>Shelter: </h2><p><%= link_to @shelter.name, shelter_path(@shelter) %><p>
+
+<h3>Animal</h3>
+<% @client.animals.each do |animal| %>
+<p><%= link_to animal.name, [@shelter, animal] %></p>
+<%= image_tag animal.photo %>
+
+<% end %>
+

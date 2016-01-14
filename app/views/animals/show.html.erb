@@ -1,0 +1,12 @@
+<h2>Meet <%= @animal.name.capitalize %></h2>
+
+<li>Species: <%= @animal.species.capitalize %></li>
+<li>Owner: <%= @animal.owner %>
+		<% if @animal.shelter %>
+  		<p><%= link_to "Adopt #{ @animal.name }", shelter_animal_adopt_path(@animal.shelter, @animal) %></p>
+		<% else @animal.client %>
+  		<p><%= link_to "Donate #{ @animal.name }", animal_donate_path(@animal) %></p>
+		<% end %></li>			
+
+
+<%= image_tag @animal.photo %>

@@ -1,0 +1,7 @@
+<%= form_for [@shelter, @animal] do |f| %>
+	<p>Name: <%= f.text_field :name %></p>
+	<p>Species: <%= f.text_field :species %></p>
+	<p>Photo: <%= f.text_field :photo %></p>
+	<p><%= f.submit %></p>
+
+<% end %>

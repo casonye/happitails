@@ -1,0 +1,20 @@
+
+<h2><%= @shelter.name %></h2>
+
+<%= link_to "Add an animal", new_shelter_animal_path(@shelter) %>
+
+<%= link_to "Add a client", new_shelter_client_path(@shelter) %>
+
+<h3>Animals</h3>
+<% @animals.each do |animal| %>
+
+<li><%= link_to animal.name, shelter_animal_path(@shelter, animal) %></li> 
+
+<% end %>
+
+<h3>Clients</h3>
+<% @clients.each do |client| %>
+
+<li><%= link_to client.name, shelter_client_path(@shelter, client) %></li> 
+
+<% end %>	
